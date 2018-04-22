@@ -4,6 +4,7 @@ class Api::V1::Statuses::FavouritedByAccountsController < Api::BaseController
   include Authorization
 
   before_action :authorize_if_got_token
+  before_action :require_user!
   before_action :set_status
   after_action :insert_pagination_headers
 

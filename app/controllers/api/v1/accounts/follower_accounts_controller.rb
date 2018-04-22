@@ -2,6 +2,7 @@
 
 class Api::V1::Accounts::FollowerAccountsController < Api::BaseController
   before_action -> { doorkeeper_authorize! :read }
+  before_action :require_user!
   before_action :set_account
   after_action :insert_pagination_headers
 
