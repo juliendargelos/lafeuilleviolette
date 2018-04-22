@@ -5,6 +5,7 @@ class AccountsController < ApplicationController
 
   include AccountControllerConcern
 
+  before_action :authenticate_user!
   before_action :set_cache_headers
 
   def show
